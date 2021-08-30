@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -23,7 +25,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '@g^m=)a5)u&0to5+*qv(fh2$qnju99$snnd&kj^shlmkgffgmc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -40,6 +42,8 @@ INSTALLED_APPS = [
     'category',
     'accounts',
     'store',
+    'carts',
+
 ]
 
 MIDDLEWARE = [
@@ -66,6 +70,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'category.context_processor.menu_links',
+                'carts.context_processors.counter',
             ],
         },
     },
@@ -129,5 +134,9 @@ STATICFILES_DIRS = [
 'kanmanisuvai/static',
 ]
 
+STATIC_ROOT = os.path.join(BASE_DIR , 'static')
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR /'media'
+
+django_heroku.settings(locals())
