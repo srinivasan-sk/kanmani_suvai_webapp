@@ -27,7 +27,7 @@ SECRET_KEY = '@g^m=)a5)u&0to5+*qv(fh2$qnju99$snnd&kj^shlmkgffgmc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ "https://kanamanisuvai-webapp.herokuapp.com" , "localhost" , '127.0.0.1', '0.0.0.0']
+ALLOWED_HOSTS = [ "https://kanamanisuvai-webapp.herokuapp.com", '*']
 
 
 # Application definition
