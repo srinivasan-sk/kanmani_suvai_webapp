@@ -29,14 +29,13 @@ class VariationManager(models.Manager):
     def colors(self):
         return super(VariationManager, self).filter(variation_category ='color',is_active =True )
 
-  #commented
-'''class VariationManager(models.Manager):
     def sizes(self):
-        return super(VariationManager, self).filter(variation_category ='size',is_active =True )
-'''
+        return super(VariationManager ,self).filter(variation_category = 'size' ,is_active= True)
+
+
 variation_category_choice = (
     ('color', 'color'),
-    # ('size' , 'size' ),
+    ('size' , 'size' ),
 )
 
 
@@ -49,5 +48,5 @@ class Variation(models.Model):
 
     objects = VariationManager()
 
-    def __unicode__(self):
-        return self.product
+    def __str__(self):
+        return self.variation_value

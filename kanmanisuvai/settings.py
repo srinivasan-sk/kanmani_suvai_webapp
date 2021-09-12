@@ -27,9 +27,6 @@ SECRET_KEY = '@g^m=)a5)u&0to5+*qv(fh2$qnju99$snnd&kj^shlmkgffgmc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ "https://kanamanisuvai-webapp.herokuapp.com", '*']
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -134,9 +131,5 @@ STATICFILES_DIRS = [
 'kanmanisuvai/static',
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR , 'static')
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR /'media'
-
-django_heroku.settings(locals())
